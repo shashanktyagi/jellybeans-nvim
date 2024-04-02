@@ -118,7 +118,7 @@ local theme = lush(function(injected_functions)
 		-- lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		-- CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
 		CursorColumn({ bg = grey_one }), -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine({ bg = grey_one }), -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		CursorLine({ bg = total_black }), -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		Directory({ fg = brandy }), -- directory names (and other special names in listings)
 		DiffAdd({ fg = tea_green, bg = dell }), -- diff mode: Added line |diff.txt|
 		DiffChange({ bg = calypso }), -- diff mode: Changed line |diff.txt|
@@ -137,7 +137,7 @@ local theme = lush(function(injected_functions)
 		-- Substitute   { }, -- |:substitute| replacement text highlighting
 		LineNr({ fg = zambezi }), -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		CursorLineNr({ fg = silver_rust }), -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		MatchParen({ fg = wewak, gui = "bold" }), -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+		MatchParen({ fg = wewak, bg=foreground, gui = "bold" }), -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		-- ModeMsg      { }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		-- MsgArea      { }, -- Area for messages and cmdline
 		-- MsgSeparator { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
@@ -152,7 +152,7 @@ local theme = lush(function(injected_functions)
 		-- PmenuThumb   { }, -- Popup menu: Thumb of the scrollbar.
 		Question({ fg = mantis }), -- |hit-enter| prompt and yes/no questions
 		QuickFixLine({ bg = bright_grey }), -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Search({ fg = wewak, bg = cocoa_brown }), -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+		Search({ fg = mine_shaft, bg = grey_two }), -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		SpecialKey({ fg = tundora, bg = grey_one }), -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad({ bg = old_brick }), -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap({ bg = dark_blue }), -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -168,7 +168,7 @@ local theme = lush(function(injected_functions)
 		-- VisualNOS    { }, -- Visual mode selection when vim is "Not Owning the Selection".
 		-- WarningMsg   { }, -- warning messages
 		-- Whitespace   { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-		WildMenu({ fg = wewak, bg = cocoa_brown }), -- current match in 'wildmenu' completion
+		WildMenu({ fg = mine_shaft, bg = grey_two }), -- current match in 'wildmenu' completion
 
 		-- These groups are not listed as default vim groups,
 		-- but they are defacto standard group names for syntax highlighting.
@@ -184,7 +184,7 @@ local theme = lush(function(injected_functions)
 		-- Boolean        { }, --  a boolean constant: TRUE, false
 		-- Float          { }, --    a floating point constant: 2.3e10
 
-		Identifier({ fg = biloba_flower }), -- (preferred) any variable name
+		Identifier({ fg = foreground }), -- (preferred) any variable name
 		Function({ fg = goldenrod }), -- function name (also: methods for classes)
 
 		Statement({ fg = perano }), -- (preferred) any statement
